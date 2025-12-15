@@ -1,0 +1,96 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f4f4f5;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1aa;
+}
+
+/* Ensure fixed navbar doesn't cover section headers on scroll */
+html {
+  scroll-padding-top: 120px;
+}
+
+/* Custom Cursor Logic */
+body {
+  cursor: none; /* Hide default cursor */
+}
+@media (max-width: 768px) {
+  body {
+    cursor: auto; /* Show default cursor on mobile */
+  }
+}
+
+.cursor-dot {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, background-color 0.3s;
+  mix-blend-mode: difference; /* Inverts color based on background */
+}
+
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: all 0.15s ease-out;
+  mix-blend-mode: difference; /* Inverts color based on background */
+}
+
+body:hover .cursor-outline {
+  opacity: 1;
+}
+
+body:has(a:hover) .cursor-outline,
+body:has(button:hover) .cursor-outline,
+body:has(.cursor-hover:hover) .cursor-outline {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: white;
+  border-color: transparent;
+}
+
+/* Utilities */
+.reveal-container {
+  overflow: hidden;
+  display: inline-flex;
+}
+
+/* Animation Delays */
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+.animation-delay-5000 {
+  animation-delay: 5s;
+}
+.animation-delay-6000 {
+  animation-delay: 6s;
+}
