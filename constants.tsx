@@ -1,7 +1,7 @@
 
-import React from 'react';
+
 import { Project, Experience, SocialLink, NavItem, Certification } from './types';
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Work', href: '#projects' },
@@ -22,7 +22,8 @@ export const HERO_DATA = {
   // 2. Add your photo (e.g. 'me.jpg') to 'public/images/'.
   // 3. Change the line below to: avatarUrl: '/images/me.jpg',
   // ----------------------------------------------------------------------------------
-  avatarUrl: "/images/personal.jpg"
+  avatarUrl: `${import.meta.env.BASE_URL}images/personal.jpg`
+
 };
 
 export const PROJECTS: Project[] = [
@@ -122,7 +123,8 @@ export const EXPERIENCE: Experience[] = [
     // 
     // Ensure your video file "campus.mp4" is inside: [Your Project Folder]/public/videos/
     // ----------------------------------------------------------------------------------
-    videoUrl: '/videos/campus.mp4', 
+    videoUrl: `${import.meta.env.BASE_URL}videos/campus.mp4`
+, 
     location: 'Bhubaneswar, India'
   },
   {
@@ -137,7 +139,7 @@ export const EXPERIENCE: Experience[] = [
     ],
     skills: ['Flutter', 'Dart', 'Firebase', 'Python'],
     imageUrl: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop',
-    videoUrl: '/videos/coding.mp4', 
+    videoUrl: `${import.meta.env.BASE_URL}videos/coding.mp4` , 
     location: 'Remote'
   },
   {
