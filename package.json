@@ -4,11 +4,12 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
-  },
+  "dev": "vite",
+  "build": "vite build",
+  "build:firebase": "vite build --mode firebase",
+  "preview": "vite preview",
+  "deploy": "gh-pages -d dist"
+},
   "dependencies": {
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
